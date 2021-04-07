@@ -1,0 +1,1 @@
+"""43. Faça um programa que leia um número indeterminado de idades de indivíduos(pare quando for informada a idade 0), e calcule a idade média desse grupo."""i_s = 0c = 0while True:    i = int(input('Digite uma idade: '))    i_s += i    c += 1    if i == 0:        c -= 1        breakprint(f'A média é {i_s / c}')
