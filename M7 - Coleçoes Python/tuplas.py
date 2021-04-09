@@ -52,8 +52,6 @@ print(curso)
 # Métodos para adição e remoção de elementos nas tuplas não existem, dado o fato
   das tuplas serem imutáveis
 
---------------------------------------------------------------------------------------------------
-
 # Soma*, Valor máximo*, Valor Mínimo*, e Tamanho
 # * Se os valores forem todos inteiros ou reais
 tupla = (1, 2, 3, 4, 5, 6)
