@@ -1,6 +1,5 @@
-"""
-5. Leia um vetor de 10 posições. Contar e escrever quantos
-   valores pares ele possui.
+"""5. Leia um vetor de 10 posições. Contar e escrever quantos
+valores pares ele possui.
 """
 l_i = []
 par = []
@@ -15,6 +14,7 @@ for elemento in l_i:
         par.append(elemento)
 
 print('\nOs Valores pares digitados são:', end=" ")
+
 for par_i in par[0:-1]:
     print(f'{par_i}', end="")
     print(', ', end="")

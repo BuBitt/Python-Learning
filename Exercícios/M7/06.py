@@ -10,3 +10,4 @@ for v in range(0, 10 + 1):
 
 print(f'\nO maior número é: {max(vetor)}.')
 print(f'O menor número é: {min(vetor)}.')
+
