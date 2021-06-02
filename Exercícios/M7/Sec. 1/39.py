@@ -16,7 +16,7 @@ k = [[1], [1, 1], [1, 2, 1]]
 
 n = int(input('Digite quantas linhas o Triângulo de Pascal terá: '))
 
-for i in range(n):
+for i in range(n - 3):
 
     for i in range(len(k)):
         lista = []
@@ -31,4 +31,8 @@ for i in range(n):
             lista.append(1)
     k.append(lista)
 
-print(k)
+
+for i in range(n):
+    for j in range(len(k[i])):
+        print(k[i][j], end=" ")
+    print()
