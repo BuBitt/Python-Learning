@@ -1,5 +1,8 @@
 .vscode
+.vscode (antigo)
 .idea
+.ipynb_checkpoints
+tempCodeRunnerFile
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
