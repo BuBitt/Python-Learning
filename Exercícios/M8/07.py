@@ -4,7 +4,10 @@ em graus fahrenheit.
 
 F = C * (9/5) + 32
 """
+
+
 def celcius_to_fahreinheit(celcius):
-    return celcius * (9/5) + 32
+    return celcius * (9 / 5) + 32
+
 
 print(celcius_to_fahreinheit(50))
