@@ -11,7 +11,7 @@ while True:
     check = 0                                       # Como o resto tem que ser 0, basta fazer uma soma das checagens.
     for i in range(1, 21):                          # loop para construir o valor a ser checado.
         check += n % i
-        print(check)# Soma das checagens.
+        print(check, end=" ")
     if check == 0:                                  # Condicional do sistema.
         print(f'O menor divisível é: {n}.')
         break
