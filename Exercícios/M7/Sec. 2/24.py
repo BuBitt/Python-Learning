@@ -57,5 +57,23 @@ for i in range(20 - 3):
         if diag_vef > maior:
             maior = diag_vef
             termos = [(j, i), (j, i + 1), (j, i + 2), (j, i + 3)]
-print(maior)
-print(termos)
+
+
+# !Cosntrução da matriz:
+for i in range(20):
+    for j in range(20):
+        if v[i][j] < 10:
+            v[i][j] = '0' + str(v[i][j])
+
+
+for i in range(20):
+    for j in range(20):
+        print(v[i][j], end=" ")
+    print()
+
+
+# *Output:
+
+print()
+print(maior, '<- Maior mutiplicação entre 4 números me qualquer direção da matriz')
+print(termos, '<- Localização dos termos na matriz.')

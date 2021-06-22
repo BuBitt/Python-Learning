@@ -7,4 +7,3 @@ r = gera_f_quadratica(-10, 20, 10)
 
 
 [print('.' * abs(round(r(i) / 50)), round(r(i))) for i in range(20)]
-
