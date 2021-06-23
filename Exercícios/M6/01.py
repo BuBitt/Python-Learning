@@ -4,6 +4,7 @@ considerando números maiores que 0.
 """
 soma = 0
 
+
 print(1)
 for number in range(0, 100):
     if number > 0 and number % 3 == 0:
