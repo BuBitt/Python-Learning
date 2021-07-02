@@ -1,0 +1,124 @@
+#+TITLE: List Comprehension
+#+AUTHOR: Bruno Bitu
+#+PROPERTY: header-args:jupyter-python :session A :kernel Python3 :async yes
+
+
+* List Comprehension
+Utilizando List Comprehension nós podemos gerar novas listas com dados processados a partir de outro iterável.
+
+- Sintaxe da List Comprehension
+  + [para cada dado in iteravel]
+
+** Exemplo
+#+begin_src jupyter-python
+numeros = [1, 2, 3, 4, 5]
+
+res = [numero * 10 for numero in numeros]
+print(res)
+
+
+def funcao(valor):
+    return valor * valor
+
+res = [funcao(numero) for numero in numeros]
+print(res)
+#+end_src
+
+#+RESULTS:
+: [10, 20, 30, 40, 50]
+: [1, 4, 9, 16, 25]
+
+** Python comprehension vs loop
+#+begin_src jupyter-python
+numeros = [1, 2, 3, 4, 5, 6]
+numeros_dobrados = []
+
+for numero in numeros:
+    numero_dobrado = numero * 2
+    numeros_dobrados.append(numero_dobrado)
+
+n2 = [numero * 2 for numero in numeros]
+print(n2)
+#+end_src
+
+#+RESULTS:
+: [2, 4, 6, 8, 10, 12]
+
+** Outros exemplos
+#+begin_src jupyter-python
+nome = 'Bruno Jaca'
+print([letra.upper() for letra in nome])
+#+end_src
+
+#+RESULTS:
+: ['B', 'R', 'U', 'N', 'O', ' ', 'J', 'A', 'C', 'A']
+
+#+begin_src jupyter-python
+nomes = ['marília', 'pedro', 'joca', 'jão', 'ana', 'thaís']
+print([nome.title() for nome in nomes])
+#+end_src
+
+#+RESULTS:
+: ['Marília', 'Pedro', 'Joca', 'Jão', 'Ana', 'Thaís']
+
+#+begin_src jupyter-python
+print([numero * 3 for numero in range(20)])
+#+end_src
+
+#+RESULTS:
+: [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57]
+
+#+begin_src jupyter-python
+print([bool(valor) for valor in [0, [], True, False, 3.14, 1]])
+#+end_src
+
+#+RESULTS:
+: [False, False, True, False, True, True]
+
+
+#+begin_src jupyter-python
+print([str(numero) for numero in range(5)])
+#+end_src
+
+#+RESULTS:
+: ['0', '1', '2', '3', '4']
+
+
+* Estruturas condicionas em comprehensions
+** Exemplo 1
+#+begin_src jupyter-python
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+pares = [numero for numero in numeros if numero % 2 == 0]
+impares = [numero for numero in numeros if numero % 2 == 1]
+
+print(pares)
+print(impares)
+
+#+end_src
+
+#+RESULTS:
+: [2, 4, 6, 8, 10]
+: [1, 3, 5, 7, 9]
+
+** Refatorando o exemplo 1
+#+begin_src jupyter-python
+pares = [numero for numero in numeros if not numero % 2]
+impares = [numero for numero in numeros if numero % 2]
+
+print(pares)
+print(impares)
+#+end_src
+
+#+RESULTS:
+: [2, 4, 6, 8, 10]
+: [1, 3, 5, 7, 9]
+
+** Exemplo 2
+#+begin_src jupyter-python
+res = [numero * 2 if numero % 2 == 0 else numero / 2 for numero in numeros]
+print(res)
+#+end_src
+
+#+RESULTS:
+: [0.5, 4, 1.5, 8, 2.5, 12, 3.5, 16, 4.5, 20]

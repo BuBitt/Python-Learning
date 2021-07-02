@@ -1,0 +1,45 @@
+#+TITLE: Set Comprehension
+#+AUTHOR: Bruno Bitu
+#+PROPERTY: header-args:jupyter-python :session A :kernel Python3 :async yes :results raw
+
+
+* Set Comprehension
+** Recapitulando
+#+begin_quote
+Lista = [1, 2, 3, 4 , 5]
+set = {1, 2, 3, 4, 5}
+#+end_quote
+
+** Exemplo
+#+begin_src jupyter-python
+set = {numero for numero in range(10)}
+print(set)
+
+
+# Outro exemplo
+numeros = {x*2 for x in range(10)}
+print(numeros)
+#+end_src
+
+#+RESULTS:
+: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+: {0, 2, 4, 6, 8, 10, 12, 14, 16, 18}
+
+** Alteração na estrutura acima para gerar um dicionário ao invés de set
+#+begin_src jupyter-python
+letras = 'abcdefghij'
+numeros = {letras[x]: x*2 for x in range(10)}
+print(numeros)
+#+end_src
+
+#+RESULTS:
+: {'a': 0, 'b': 2, 'c': 4, 'd': 6, 'e': 8, 'f': 10, 'g': 12, 'h': 14, 'i': 16, 'j': 18}
+
+** Exemplo com string
+#+begin_src jupyter-python
+letras = {letras for letras in 'jujuba'}
+print(letras)
+#+end_src
+
+#+RESULTS:
+: {'u', 'b', 'a', 'j'}

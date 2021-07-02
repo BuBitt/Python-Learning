@@ -1,0 +1,71 @@
+#+TITLE: Dictionary Comprehension
+#+AUTHOR: Bruno Bitu
+#+PROPERTY: header-args:jupyter-python :session A :kernel python3 :async yes
+
+* Dictionary comprehension
+
+** Relembrando
+#+BEGIN_QUOTE
+Se quisermos criar uma lista fazemos:
+lista = []
+
+Se quisermos criar uma tupla:
+tupla = ()
+
+Se quisermos criar um conjunto:
+conjunto = {}
+
+Se quisermos criar um dicionário:
+dicionário = {'a': 1, 'b': 2, 'c': 3}
+
+Sintaxy
+
+{chave: valor for in interavel}
+[valor for valor in iteravel]
+#+end_quote
+
+** Exemplos
+*** Simple Dictionary
+#+begin_src jupyter-python
+numeros = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+quadrado = {chave:valor ** 2 for chave, valor in numeros.items()}
+print(quadrado)
+#+end_src
+
+#+RESULTS:
+: {'a': 1, 'b': 4, 'c': 9, 'd': 16, 'e': 25}
+
+*** Iteration in dictionary
+#+begin_src jupyter-python
+numeros = [1, 2, 3, 4 , 5]
+
+quadrado = {valor: valor ** 2 for valor in numeros}
+print(quadrado)
+#+end_src
+
+#+RESULTS:
+: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+*** Transformando termos da string em chave
+#+begin_src jupyter-python
+chaves = 'abcde'
+valores = [1, 2, 3, 4, 5]
+
+mistura = {chaves[i]: valores[i] for i in range(0, len(valores))}
+print(mistura)
+#+end_src
+
+#+RESULTS:
+: {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+*** Lógica condicional
+#+begin_src jupyter-python
+numeros = [1, 2, 3, 4, 5]
+
+res = {num: ('par' if num % 2 == 0 else 'impar') for num in numeros}
+print(res)
+#+end_src
+
+#+RESULTS:
+: {1: 'impar', 2: 'par', 3: 'impar', 4: 'par', 5: 'impar'}

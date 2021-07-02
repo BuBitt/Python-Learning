@@ -18,10 +18,10 @@ def triangulo_lateral(tamanho):
         print('*' * metade_1)
     if not metade_1 == tamanho:
         print()
-    
     for metade_2 in range(tamanho -1, 0, -1):
         print('*' * metade_2)
     print()
 
 
-triangulo_lateral(10)
+triangulo_lateral(5)
+

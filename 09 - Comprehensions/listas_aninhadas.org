@@ -1,0 +1,82 @@
+#+TITLE: Listas Aninhadas
+#+AUTHOR: Bruno Bitu
+#+PROPERTY: header-args:jupyter-python :session A :kernel Python3 :async yes :results raw
+
+
+* Listas Aninhadas
+Linguagens de programação possuem uma estrutura de dados chamadas de arrays:
+  - Unidimensionais;
+  - Multidimensionais;
+
+Em Python temos listas:
+#+begin_quote
+numeros = [1, 'b', 3.23, 34, True
+#+end_quote
+
+** Exemplo
+#+begin_src jupyter-python
+listas = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+print(listas)
+print(type(listas))
+#+end_src
+
+#+RESULTS:
+: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+: <class 'list'>
+
+** Como fazemos para acessar os dados?
+#+begin_src jupyter-python
+print(listas[0][1])  # 2
+print(listas[2][1])  # 8
+#+end_src
+
+#+RESULTS:
+: 2
+: 8
+
+** Iterando com loops em uma lista aninhada
+*** Por meio de for
+#+begin_src jupyter-python
+print()
+for lista in listas:
+    for num in lista:
+        print(num, end=" ")
+print()
+#+end_src
+
+#+RESULTS:
+:
+: 1 2 3 4 5 6 7 8 9
+
+*** Por meio de List Comprehesion
+#+begin_src jupyter-python
+[[print(valor, end=" ") for valor in lista] for lista in listas]
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+: 1 2 3 4 5 6 7 8 9
+| None | None | None |
+| None | None | None |
+| None | None | None |
+:END:
+
+** Outros exemplos
+*** Gerando um tabuleiro 3x3
+#+begin_src jupyter-python
+tabuleiro = [[numero for numero in range(1, 4)] for valor in range(1, 4)]
+print(tabuleiro)
+
+print()
+est = [print(tabuleiro[i], end="\n") for i in range(3)]
+print(est)
+#+end_src
+
+#+RESULTS:
+: [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+:
+: [1, 2, 3]
+: [1, 2, 3]
+: [1, 2, 3]
+: [None, None, None]
