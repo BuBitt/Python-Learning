@@ -7,7 +7,7 @@ Conhecidas por  Expressões Lambdas ou simplesmente Lambdas, são funções sem 
 ouse seja, funções anônimas.
 
 ** Utilizando lambdas
-#+begin_src quote
+#+begin_src python
 def funcao(x):
     return 3 * x + 1
 python
@@ -20,7 +20,7 @@ calc = lambda x: 3 * x + 1
 
 
 print(calc(4))
-#+end_quote
+#+end_src
 
 #+RESULTS:
 : 13
