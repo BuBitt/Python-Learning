@@ -3,7 +3,6 @@
 #+PROPERTY: header-args:jupyter-python :session A :kernel Python3 :async yes
 
 
-* List Comprehension
 Utilizando List Comprehension nós podemos gerar novas listas com dados processados a partir de outro iterável.
 
 - Sintaxe da List Comprehension
@@ -85,6 +84,8 @@ print([str(numero) for numero in range(5)])
 
 
 * Estruturas condicionas em comprehensions
+Também é possível usar condicionais em comprehensions
+
 ** Exemplo 1
 #+begin_src jupyter-python
 numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

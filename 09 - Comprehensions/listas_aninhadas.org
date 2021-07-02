@@ -3,7 +3,6 @@
 #+PROPERTY: header-args:jupyter-python :session A :kernel Python3 :async yes :results raw
 
 
-* Listas Aninhadas
 Linguagens de programação possuem uma estrutura de dados chamadas de arrays:
   - Unidimensionais;
   - Multidimensionais;
@@ -36,6 +35,8 @@ print(listas[2][1])  # 8
 : 8
 
 ** Iterando com loops em uma lista aninhada
+Diferenças entre for e list comprehension
+
 *** Por meio de for
 #+begin_src jupyter-python
 print()

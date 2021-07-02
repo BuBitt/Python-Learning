@@ -2,8 +2,6 @@
 #+AUTHOR: Bruno Bitu
 #+PROPERTY: header-args:jupyter-python :session A :kernel python3 :async yes
 
-* Dictionary comprehension
-
 ** Relembrando
 #+BEGIN_QUOTE
 Se quisermos criar uma lista fazemos:

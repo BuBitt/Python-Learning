@@ -2,8 +2,8 @@
 #+AUTHOR: Bruno Bitu
 #+PROPERTY: header-args:jupyter-python :session A :kernel Python3 :async yes :results raw
 
+Comprehension sobre sets
 
-* Set Comprehension
 ** Recapitulando
 #+begin_quote
 Lista = [1, 2, 3, 4 , 5]
