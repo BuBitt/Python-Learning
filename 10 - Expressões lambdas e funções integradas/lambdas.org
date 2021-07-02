@@ -7,7 +7,7 @@ Conhecidas por  Expressões Lambdas ou simplesmente Lambdas, são funções sem 
 ouse seja, funções anônimas.
 
 ** Utilizando lambdas
-#+begin_src jupyter-python
+#+begin_src python
 def funcao(x):
     return 3 * x + 1
 
@@ -27,7 +27,7 @@ print(calc(4))
 : 13
 
 ** Podemos ter expressões lambdas com várias entradas
-#+begin_src jupyter-python
+#+begin_src python
 nome_completo = lambda nome, sobrenome: nome.strip().title() + ' ' + sobrenome.strip().title()
 
 
@@ -40,7 +40,7 @@ print(nome_completo('jao', 'batista'))
 : Jao Batista
 
 ** Em funções python podemos ter nenhumas ou várias entradas. Em lambdas também.
-#+begin_src jupyter-python
+#+begin_src python
 amar = lambda: 'Como não amar python'
 
 uma = lambda x: 3 * x + 1
@@ -64,7 +64,7 @@ print(tres(3, 6, 9))
 : 4.909090909090908
 
 ** Outro exemplo
-#+begin_src jupyter-python
+#+begin_src python
 autores = ['Isaac Asimov', 'Ray Bradbury', 'Robert Heinlein', 'Arthur C. Clarke',
            'Frank Herbert', 'Orson Scott Card', 'Douglas Adams', 'H. G. Wells', 'Leigh Brackett']
 
@@ -82,7 +82,7 @@ print(autores)
 : ['Douglas Adams', 'Isaac Asimov', 'Leigh Brackett', 'Ray Bradbury', 'Orson Scott Card', 'Arthur C. Clarke', 'Robert Heinlein', 'Frank Herbert', 'H. G. Wells']
 
 ** Exemplo: Função quadrática
-#+begin_src jupyter-python
+#+begin_src python
 # f(x) = a * x ** 2 + b * x + c
 
 # Definindo a função
