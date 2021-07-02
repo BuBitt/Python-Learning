@@ -1,6 +1,6 @@
 #+TITLE: Listas Aninhadas
 #+AUTHOR: Bruno Bitu
-#+PROPERTY: header-args:jupyter-python :session A :kernel Python3 :async yes :results raw
+#+PROPERTY: header-args:jupyter-python :session A :kernel python3 :async yes :exports both
 
 
 Linguagens de programação possuem uma estrutura de dados chamadas de arrays:

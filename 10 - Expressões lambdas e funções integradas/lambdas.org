@@ -1,0 +1,106 @@
+#+TITLE: Funções Lambdas
+#+AUTHOR: Bruno Bitu
+#+PROPERTY: header-args:jupyter-python :session A :kernel python3 :async yes :exports both
+
+
+Conhecidas por  Expressões Lambdas ou simplesmente Lambdas, são funções sem nome,
+ouse seja, funções anônimas.
+
+** Utilizando lambdas
+#+begin_src jupyter-python
+def funcao(x):
+    return 3 * x + 1
+
+
+print(funcao(4))
+
+
+# EXPRESSÃO LAMBDA
+calc = lambda x: 3 * x + 1
+
+
+print(calc(4))
+#+end_src
+
+#+RESULTS:
+: 13
+: 13
+
+** Podemos ter expressões lambdas com várias entradas
+#+begin_src jupyter-python
+nome_completo = lambda nome, sobrenome: nome.strip().title() + ' ' + sobrenome.strip().title()
+
+
+print(nome_completo('jao', 'batista'))
+print(nome_completo('jao', 'batista'))
+#+end_src
+
+#+RESULTS:
+: Jao Batista
+: Jao Batista
+
+** Em funções python podemos ter nenhumas ou várias entradas. Em lambdas também.
+#+begin_src jupyter-python
+amar = lambda: 'Como não amar python'
+
+uma = lambda x: 3 * x + 1
+
+duas = lambda x, y: x * y ** 0.5
+
+tres = lambda x, y, z: 3 / (1 / x + 1 / y + 1 / z)
+
+# n = lambda x1, x2, ... xn: <expressão>
+
+print(amar)
+print(uma(6))
+print(duas(4, 5))
+print(tres(3, 6, 9))
+#+end_src
+
+#+RESULTS:
+: <function <lambda> at 0x7ffabf57f3a0>
+: 19
+: 8.94427190999916
+: 4.909090909090908
+
+** Outro exemplo
+#+begin_src jupyter-python
+autores = ['Isaac Asimov', 'Ray Bradbury', 'Robert Heinlein', 'Arthur C. Clarke',
+           'Frank Herbert', 'Orson Scott Card', 'Douglas Adams', 'H. G. Wells', 'Leigh Brackett']
+
+print(autores)
+print()
+
+autores.sort(key=lambda sobrenome: sobrenome.split(' ')[-1].lower())
+
+print(autores)
+#+end_src
+
+#+RESULTS:
+: ['Isaac Asimov', 'Ray Bradbury', 'Robert Heinlein', 'Arthur C. Clarke', 'Frank Herbert', 'Orson Scott Card', 'Douglas Adams', 'H. G. Wells', 'Leigh Brackett']
+:
+: ['Douglas Adams', 'Isaac Asimov', 'Leigh Brackett', 'Ray Bradbury', 'Orson Scott Card', 'Arthur C. Clarke', 'Robert Heinlein', 'Frank Herbert', 'H. G. Wells']
+
+** Exemplo: Função quadrática
+#+begin_src jupyter-python
+# f(x) = a * x ** 2 + b * x + c
+
+# Definindo a função
+
+def gera_f_quadratica(a, b, c):
+    return lambda x: a * x ** 2 + b * x + c
+
+teste = gera_f_quadratica(2, 3, -5)
+
+print(teste(0))
+print(teste(1))
+print(teste(2))
+
+print(gera_f_quadratica(40, 90 ,1)(2))
+#+end_src
+
+#+RESULTS:
+: -5
+: 0
+: 9
+: 341

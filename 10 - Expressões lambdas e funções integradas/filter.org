@@ -1,0 +1,102 @@
+#+TITLE: Função Filter
+#+AUTHOR: Bruno Bitu
+#+PROPERTY: header-args:jupyter-python :session A :kernel python3 :async yes :exports both
+
+
+filter() -> Filtrar dados de uma determinada coleção.
+
+** Exemplos
+*** Primeiro
+#+begin_src jupyter-python
+import statistics as st  # Biblioteca usada para trabalhar com dados estatísticos
+
+
+dados = [1.3, 2.7, 0.8, 4.1, 4.3, -0.1]
+
+
+# Calculando a média dos dados utilizando a função mean()
+media = st.mean(dados)
+
+
+# Assim como a função map(), a filter(), recebe 2 parâmetros, sendo uma função e um iteravel:
+res = filter(lambda valor: valor < media, dados)  # Retorna True or False para colocar oselementos.
+print(media, list(res))
+
+#+end_src
+
+#+RESULTS:
+: 2.183333333333333 [1.3, 0.8, -0.1]
+
+OBS: Assim como em map(), após o primeiro uso o retorno de filter() também sumirá.
+
+*** segundo
+#+begin_src jupyter-python
+paises = ['', 'Argentina', '', 'Brasil', '', 'Russia']
+print(paises)
+
+
+res = filter(None, paises)
+print(list(res))
+#+end_src
+
+#+RESULTS:
+: ['', 'Argentina', '', 'Brasil', '', 'Russia']
+: ['Argentina', 'Brasil', 'Russia']
+
+** A Diferença entre map() e filter()
+
+A função map() recebe dois parâmetros, uma função e um iterável e retorna um objeto mapeando a função para cada elemento iterável. Já a função filter() recebe também dois parâmetros, uma função e um iterável, mas retorna um ojeto filtrando apenas os elementos de acordo com a função.
+
+*** Exemplo:
+#+begin_src jupyter-python
+usuarios = [
+    {'username': "Samuel", "Tweets": ["Eu adoro bolos", "Eu adoro pizzas"]},
+    {'username': "Marília", "Tweets": ["Eu amo meu gato"]},
+    {'username': "Kedas", "Tweets": []},
+    {'username': "P.H.", "Tweets": []},
+    {'username': "Joca", "Tweets": ["Eu gosto de cachorros", "Vou sair hoje"]},
+    {'username': "Bruno", "Tweets": []}
+]
+
+print(usuarios)
+print()
+#+end_src
+
+#+RESULTS:
+: [{'username': 'Samuel', 'Tweets': ['Eu adoro bolos', 'Eu adoro pizzas']}, {'username': 'Marília', 'Tweets': ['Eu amo meu gato']}, {'username': 'Kedas', 'Tweets': []}, {'username': 'P.H.', 'Tweets': []}, {'username': 'Joca', 'Tweets': ['Eu gosto de cachorros', 'Vou sair hoje']}, {'username': 'Bruno', 'Tweets': []}]
+:
+
+Filtrar os usuários que estão inativos no twitter:
+**** Primeira forma
+#+begin_src jupyter-python
+inativos = list(filter(lambda u: len(u['Tweets']) == 0, usuarios))
+print(inativos)
+print()
+#+end_src
+
+#+RESULTS:
+: [{'username': 'Kedas', 'Tweets': []}, {'username': 'P.H.', 'Tweets': []}, {'username': 'Bruno', 'Tweets': []}]
+:
+
+**** Segunda Forma
+#+begin_src jupyter-python
+inativos = list(filter(lambda u: not u['Tweets'], usuarios))
+print(inativos)
+
+#+end_src
+
+#+RESULTS:
+: [{'username': 'Kedas', 'Tweets': []}, {'username': 'P.H.', 'Tweets': []}, {'username': 'Bruno', 'Tweets': []}]
+
+** Combinar Filter e Map
+
+Devemos criar um lista contendo sua instrutora é + nome da instrutora, desde que cada nome tenha < 5 caracteres.
+#+begin_src jupyter-python
+nomes = ['Vanessa', 'Ana', 'Maria','Eva']
+
+lista = list(map(lambda nome: f'Sua instrutora é {nome}', filter(lambda nome: len(nome) < 5, nomes)))
+print(lista)
+#+end_src
+
+#+RESULTS:
+: ['Sua instrutora é Ana', 'Sua instrutora é Eva']

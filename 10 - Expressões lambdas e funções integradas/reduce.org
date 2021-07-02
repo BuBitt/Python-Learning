@@ -1,0 +1,3 @@
+#+TITLE: Reduce
+#+AUTHOR: Bruno Bitu
+#+PROPERTY: header-args:jupyter-python :session A :kernel python3 :async yes :exports both

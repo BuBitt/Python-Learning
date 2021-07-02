@@ -1,0 +1,78 @@
+#+TITLE: Função Map
+#+AUTHOR: Bruno Bitu
+#+PROPERTY: header-args:jupyter-python :session A :kernel python3 :async yes :exports both
+
+
+Com map fazemos mapeamento dos valores uma coleção aplicando uma função.
+
+** Exemplos
+*** Forma Comum
+#+begin_src jupyter-python
+raios = [2, 5, 7.1,0.3, 10, 44]
+
+for raio in raios:
+    print(raio, end=" ")
+
+#+end_src
+
+#+RESULTS:
+: 2 5 7.1 0.3 10 44
+
+*** Utilizando map() para a mesma função
+map() recebe 2 parâmetros: O primeiro a função, o segundo um iterável.Retorna um Map Oject
+#+begin_src jupyter-python
+areas = map(area, raios)
+
+print(areas, '<- Retorna um objeto prórpio.')
+print(type(areas), '\n')
+
+
+print(list(areas),'<- convertendo pra listas')
+print(type(list(areas)))
+#+end_src
+
+#+RESULTS:
+: <map object at 0x7fcb8c6dd220> <- Retorna um objeto prórpio.
+: <class 'map'>
+:
+: [12.566370614359172, 78.53981633974483, 158.36768566746147, 0.2827433388230814, 314.1592653589793, 6082.12337734984] <- convertendo pra listas
+: <class 'list'>
+
+*** Função map() com lambda
+#+begin_src jupyter-python
+print(list(map(lambda r: math.pi * (r ** 2), raios)))
+#+end_src
+
+#+RESULTS:
+: [12.566370614359172, 78.53981633974483, 158.36768566746147, 0.2827433388230814, 314.1592653589793, 6082.12337734984]
+
+- Após utilizar a função map() depois da primeira utilização do resultado, ele zera.
+
+
+* Para fixar map()
+Temos dados iteráveis:
+ - dados: a1, a2, ..., an
+
+Temos uma função:
+ - função: f(x)
+
+Utilizamos a função map(f, dados), em que map() irá 'mapear' cada elemento dos dados e aplicar a função
+O Map Object: f(a1), f(a2), f(...), f(n)
+
+*** Mais Exemplos
+#+begin_src jupyter-python
+cidades = [('Berlim', 29),
+           ('Cairo', 38),
+           ('Buenos Aires', 19),
+           ('Los Angeles', 26),
+           ('Tokio', 27),
+           ('Nova Iorque', 28),
+           ('Londres', 22)]
+
+
+# lambda + map()             *==========função===============*   *=iteravel=*
+print(list(map(lambda dado: (dado[0], round(9/5 * dado[1] + 32)), cidades)))
+#+end_src
+
+#+RESULTS:
+: [('Berlim', 84), ('Cairo', 100), ('Buenos Aires', 66), ('Los Angeles', 79), ('Tokio', 81), ('Nova Iorque', 82), ('Londres', 72)]
