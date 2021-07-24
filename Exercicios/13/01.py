@@ -20,17 +20,5 @@ def cria(directory, arq_name):
         print(arq.readlines())
 
 
-cria(dire, 'arq.txt')
-
-
-"""
-try:
-    cria(dire)
-except FileNotFoundError:
-    print('Arquivo não encontrado.')
-    os.mknod(dire)
-    cria(dire)
-    print('Sucesso!')
-except FileExistsError:
-    print('O arquivo já existe.')
-"""
+if __name__ == '__main__':
+    cria(dire, 'arq.txt')

@@ -1,0 +1,21 @@
+M*T L*c*ns*
+
+C*pyr*ght (c) 2021 Br*n*
+
+P*rm*ss**n *s h*r*by gr*nt*d, fr** *f ch*rg*, t* *ny p*rs*n *bt**n*ng * c*py
+*f th*s s*ftw*r* *nd *ss*c**t*d d*c*m*nt*t**n f*l*s (th* "S*ftw*r*"), t* d**l
+*n th* S*ftw*r* w*th**t r*str*ct**n, *ncl*d*ng w*th**t l*m*t*t**n th* r*ghts
+t* *s*, c*py, m*d*fy, m*rg*, p*bl*sh, d*str*b*t*, s*bl*c*ns*, *nd/*r s*ll
+c*p**s *f th* S*ftw*r*, *nd t* p*rm*t p*rs*ns t* wh*m th* S*ftw*r* *s
+f*rn*sh*d t* d* s*, s*bj*ct t* th* f*ll*w*ng c*nd*t**ns:
+
+Th* *b*v* c*pyr*ght n*t*c* *nd th*s p*rm*ss**n n*t*c* sh*ll b* *ncl*d*d *n *ll
+c*p**s *r s*bst*nt**l p*rt**ns *f th* S*ftw*r*.
+
+TH* S*FTW*R* *S PR*V*D*D "*S *S", W*TH**T W*RR*NTY *F *NY K*ND, *XPR*SS *R
+*MPL**D, *NCL*D*NG B*T N*T L*M*T*D T* TH* W*RR*NT**S *F M*RCH*NT*B*L*TY,
+F*TN*SS F*R * P*RT*C*L*R P*RP*S* *ND N*N*NFR*NG*M*NT. *N N* *V*NT SH*LL TH*
+**TH*RS *R C*PYR*GHT H*LD*RS B* L**BL* F*R *NY CL**M, D*M*G*S *R *TH*R
+L**B*L*TY, WH*TH*R *N *N *CT**N *F C*NTR*CT, T*RT *R *TH*RW*S*, *R*S*NG FR*M,
+**T *F *R *N C*NN*CT**N W*TH TH* S*FTW*R* *R TH* *S* *R *TH*R D**L*NGS *N TH*
+S*FTW*R*.

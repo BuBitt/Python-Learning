@@ -1,0 +1,5 @@
+Bruno é maior de idade.
+Pedro é maior de idade.
+Jorginho é menor de idade.
+Marilia é maior de idade.
+Jane é maior de idade.

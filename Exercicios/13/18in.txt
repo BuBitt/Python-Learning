@@ -1,0 +1,12 @@
+carro
+20000
+solidao
+0
+amor
+0
+sonhos
+999999
+vaso
+50
+computador
+10000
