@@ -2,7 +2,7 @@
 Seek e Cursors
 
 seek() -> É utilizado para movimentar o cursor pelo arquivo.
-
+"""
 arquivo = open('texto.txt')
 
 arquivo.seek(0)
@@ -39,11 +39,11 @@ os trabalhos com o arquivo devemos dechar a conexão. Para isso utilizamos a fun
 
 para trabalhar com arquivos:
 
-1 - Abrir arquivo;
+# 1 - Abrir arquivo;
 
-2 - Trabalhar no arquivo;
+# 2 - Trabalhar no arquivo;
 
-3 - Fechar o arquivo.
+# 3 - Fechar o arquivo.
 
 
 # 1 - Abrindo arquivo;
@@ -61,7 +61,7 @@ print(arquivo.closed)
 
 # Se tentarmos manipular o arquivo após seu fechamento, teremos um ValueError
 
-"""
+
 arquivo = open('texto.txt')
 
 # Com a função read podemos limitar a quandidade de caracteres lidos no arquivo.

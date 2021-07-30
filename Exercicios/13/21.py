@@ -11,20 +11,20 @@ def bin_write(path_out, iterable_contents):
     
     with open(path_out, 'wb') as arq_out:
         for _, content in enumerate(iterable_contents):
-            
+
             # Converte os valores a serem escritos para binário
             b_nome = bytearray(content[0].encode('UTF-8'))
             b_nota = bytearray(content[1].encode('UTF-8'))
             b_sep_nota = bytearray(':'.encode('UTF-8'))
             b_sep_nome = bytearray('|'.encode('UTF-8'))
-            
+
             # Escreve os valores
             arq_out.write(b_sep_nome)
             arq_out.write(b_nome)
             arq_out.write(b_sep_nota)
             arq_out.write(b_nota)
             arq_out.write(b_sep_nome)
-            
+
 
 def bin_translate(s):
     return s.decode('UTF-8')
