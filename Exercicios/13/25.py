@@ -27,7 +27,7 @@ def w_contatos(path_out, array_contatos):
             nome = contato[0].encode('ascii')
             tele = contato[1].encode('ascii')
             aniv = contato[2].encode('ascii')
-            #id_contato = contato[3].encode('ascii')
+            # id_contato = contato[3].encode('ascii')
             sep_interno = ','.encode('ascii')
             sep_externo = '|'.encode('ascii')
 
@@ -36,8 +36,8 @@ def w_contatos(path_out, array_contatos):
             bin_db.write(tele)
             bin_db.write(sep_interno)
             bin_db.write(aniv)
-            #bin_db.write(sep_interno)
-            #bin_db.write(id_contato)
+            # bin_db.write(sep_interno)
+            # bin_db.write(id_contato)
             if not i == len(array_contatos) - 1:
                 bin_db.write(sep_externo)
 
@@ -60,11 +60,11 @@ def inserir_contato(array_contatos):
             telefone = input(f'Digite o telefone de {nome} (DD000000000): ')
             if len(telefone) != 11:
                 raise ValueError('\n(!) Número inválido (!)\n')
-        
+
         except ValueError as err:
             print(err)
             pass
-        
+
         else:
             break
 
@@ -77,14 +77,14 @@ def inserir_contato(array_contatos):
         except ValueError as err:
             print(err)
             pass
-        
+
         else:
             break
-    
+
     id_contato = str(len(array_contatos))
     contato = [nome, telefone, aniversario, id_contato]
     array_contatos.append(contato)
-    
+
     print(f'\n(!) O contato "{contato[0]}" foi Adicionado (!)')
     print("=" * 84)
     time.sleep(1)
@@ -99,7 +99,7 @@ def remove_contato(array_contatos):
         except ValueError:
             print('\n(!) Id inválido (!)\n')
             pass
-        
+
         else:
             break
 
@@ -128,8 +128,8 @@ def pesquisar_contato(array_contatos):
 
     for contato in array_contatos:
         nome_contato = contato[0]
-        
-        if achar_palavra(nome)(nome_contato) != None:
+
+        if achar_palavra(nome)(nome_contato) is not None:
             encontrados.append(contato)
             enc = True
     if enc:
@@ -137,7 +137,7 @@ def pesquisar_contato(array_contatos):
         time.sleep(0.5)
         return listar_contatos(encontrados)
     else:
-        print('\n(!) Palavra não encontada nos nomes (!)')
+        print('\n(!) Palavra não encontrada nos nomes (!)')
         print('"=" * 84')
         time.sleep(1)
 
@@ -148,7 +148,7 @@ def listar_contatos(array_contatos):
     print(f'+{"-" * 6}+{"-" * 40}+{"-" * 17}+{"-" * 16}+')
     print(f'|  id  |  NOME{" " * 34}|  TELEFONE       |  ANIVERSÁRIO   |')
     print(f'+{"-" * 6}+{"-" * 40}+{"-" * 17}+{"-" * 16}+')
-    
+
     for i, contato in enumerate(array_contatos):
         # id_contato index
         id_contato = i
@@ -157,7 +157,7 @@ def listar_contatos(array_contatos):
             id_contato = i
         else:
             id_contato = '0' + str(id_contato)
-        
+
         # id contato no-index
         """id_contato = contato[3]
         
@@ -169,18 +169,18 @@ def listar_contatos(array_contatos):
         # Nome
         nome = contato[0][0:39]
         nome = nome + " " * (39 - len(nome))
-    
+
         # Telefone
         tel = str(contato[1])
         tel = "(" + tel[0:2] + ") " + tel[2:7] + "-" + tel[7::]
-    
+
         # Aniversário
         ani = str(contato[2])
         ani = ani[0:2] + "/" + ani[2:4] + "/" + ani[4:]
-    
+
         # Saída para a tabela
         print(f'|  {id_contato}  | {nome}| {tel} |   {ani}   |')
-    print(f'+{"-"*6}+{"-" * 40}+{"-" * 17}+{"-" * 16}+')
+    print(f'+{"-" * 6}+{"-" * 40}+{"-" * 17}+{"-" * 16}+')
 
 
 # Procura e gera lista com nomes que começam com a letra determinada
@@ -194,7 +194,7 @@ def lista_por_letra(array_contatos):
         except ValueError as err:
             print(err)
             pass
-        
+
         else:
             break
 
@@ -203,21 +203,20 @@ def lista_por_letra(array_contatos):
         p_letra_array = contato[0][0]
         if letra == p_letra_array:
             encontrados.append(contato)
-    
+
     if len(encontrados) > 0:
         print(f'(!) IMPRIMINDO TABELA DOS CONTATOS COM INÍCIO "{letra.upper()}" (!)\n')
         time.sleep(0.5)
         return listar_contatos(encontrados)
     else:
-        print('(!) Primeira letra não encontada nos nomes (!)')
+        print('(!) Primeira letra não encontrada nos nomes (!)')
         print("=" * 84)
         time.sleep(1)
 
 
-
 # Imprimir os aniversários do dia
 def imprimir_aniversarios(array_contatos):
-    encontrados = []    
+    encontrados = []
 
     current_time = datetime.datetime.now()
     mes_atual = current_time.month
@@ -230,12 +229,12 @@ def imprimir_aniversarios(array_contatos):
         if mes_atual == mes_contato:
             if dia_atual == dia_contato:
                 encontrados.append(contato)
-    
+
     if len(encontrados) > 0:
         print('\n(!) IMPRIMINDO TABELA DE ANIVERSARIANTES DO DIA (!)\n')
         time.sleep(0.5)
         return listar_contatos(encontrados)
-    
+
     else:
         print('(!) Não há nenhum aniversariante hoje (!)')
         print("=" * 84)
@@ -272,7 +271,6 @@ def menu():
                 inserir_contato(array_contatos)
                 continue
 
-            
             # Remover contato
             if opc == 'b':
                 remove_contato(array_contatos)
@@ -310,7 +308,7 @@ def menu():
 
 def populando_out():
     array_contatos = []
-    
+
     for i in range(50):
         id_contato = str(i)
         nome = 'Testando Nome Composto'
